@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Facial Recognition based Music Recommendation System</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+<body style="background-color: #edffec;">
+
+	<form action="{{url_for('emotion_detect')}}" method="POST">
+		{%if data == "punjabi"%}
+
+		<div class="title">
+		<h1 class="display-4">Punjabi Singers</h1>
+		
+		</div>
+		<label><input type="radio" name="singer" value="sidhu moosewala" ><div class="box">Sidhu Moosewala</div></label>
+		<label><input type="radio" name="singer" value="amrinder gill"><div class="box">Amrinder Gill</div></label>
+		<br>
+		<label><input type="radio" name="singer" value="karan aujla"><div class="box">Karan Aujla</div></label>
+		<label><input type="radio" name="singer" value="diljit dosanjh"><div class="box">Diljit Dosanjh</div></label>
+		<br>
+		<input type="text" name="singer" placeholder="Some Other Singer:">
+
+		
+		{%elif data == "english"%}
+
+		<div class="title">
+		<h1 class="display-4">English Singers</h1>
+		</div>
+		<label><input type="radio" name="singer" value="Taylor swift" ><div class="box">Taylor Swift</div></label>
+		<label><input type="radio" name="singer" value="Travis scott"><div class="box">Travis Scott</div></label>
+		<br>
+		<label><input type="radio" name="singer" value="Playboi carti"><div class="box">Playboi Carti</div></label>
+		<label><input type="radio" name="singer" value="Drake"><div class="box">Drake</div></label>
+		<br>
+		<input type="text" name="singer" placeholder="Some Other Singer:">
+
+		{%elif data == "hindi"%}
+
+		<div class="title">
+		<h1 class="display-4">Hindi Singers</h1>
+		</div>
+		<label><input type="radio" name="singer" value="Kishore kumar" ><div class="box">Kishore Kumar</div></label>
+		<label><input type="radio" name="singer" value="Arijit Singh"><div class="box">Arijit Singh</div></label>
+		<br>
+		<label><input type="radio" name="singer" value="Amit Trivedi"><div class="box">Amit Trivedi</div></label>
+		<label><input type="radio" name="singer" value="Pritam"><div class="box">Pritam</div></label>
+		<br>
+		<input type="text" name="singer" placeholder="Some Other Singer:">
+		
+		{%else%}
+		<div class="title">
+		<h1 class="display-4">Choose your Singer</h1>
+		
+		</div>
+		<input type="text" name="singer">
+		{%endif%}
+
+		<br>
+		<input type="submit" name="btn" value="Detect Emotion" class="btn btn-outline-success btn-lg">
+	</form>
+
+</body>
+</html>
